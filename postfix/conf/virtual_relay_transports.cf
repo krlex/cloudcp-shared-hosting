@@ -1,0 +1,7 @@
+version = 3
+server_host = 127.0.0.1
+server_port = 389
+search_base = 
+query_filter = (&(&(mailRelayDomain=%s)(status=active))(objectClass=ccpMailRelay))
+result_format = %s
+result_attribute = mailTransport

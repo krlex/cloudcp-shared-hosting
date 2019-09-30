@@ -1,0 +1,1 @@
+imapsync --buffersize 8192000 --nosyncacls --subscribe --syncinternaldates --authmech1 PLAIN --host1 host1.example.com --user1 user@example.com --password1 p@ssword1 --authmech2 PLAIN --host2 host2.example.com --user2 user@example.com --password2 p@ssword2

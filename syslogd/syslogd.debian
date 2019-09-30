@@ -1,0 +1,1 @@
+SYSLOGD="-a /chroot/named/dev/log -a /var/spool/postfix/dev/log"

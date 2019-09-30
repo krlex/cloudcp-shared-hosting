@@ -1,0 +1,14 @@
+function get_chroot_path {
+
+	if [ -z "$DNS_CHROOT" ]; then
+	   echo "Enter the location where you would like BIND DNS chrooted"
+	   read DNS_CHROOT
+	   if [ -z "$DNS_CHROOT" ]; then
+                echo "You must enter a valid file system path"
+                getChrootPath
+           fi
+           if [ -d "$DNS_CHROOT" ]; then
+               mkdir -p $DNS_CHROOT
+           fi
+	fi
+}

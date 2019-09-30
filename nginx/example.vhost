@@ -1,0 +1,16 @@
+server {
+
+        listen 80;
+
+        server_name  example.com;
+        access_log  logs/example.com.access.log;
+
+        location / {
+                root html/example.com;
+        }
+
+        location ~ \.php {
+                root html/example.com;
+                include fastcgi_php_params;
+        }
+}

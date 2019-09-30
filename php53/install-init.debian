@@ -1,0 +1,1 @@
+update-rc.d -f php-fpm defaults

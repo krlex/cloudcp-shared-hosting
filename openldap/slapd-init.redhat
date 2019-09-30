@@ -1,0 +1,51 @@
+#!/bin/bash
+# chkconfig: - 85 15
+# description: OpenLDAP Server
+# processname: slapd
+# pidfile: /usr/local/var/run/slapd.pid
+# config: /usr/local/etc/openldap/slapd.conf
+
+
+# Source function library
+. /etc/init.d/functions
+
+# Get network config
+. /etc/sysconfig/network
+
+RETVAL=0
+
+start() {
+    echo "Starting OpenLDAP: "
+    /usr/local/libexec/slapd -f /usr/local/etc/openldap/slapd.conf
+    RETVAL=$?
+    return $RETVAL
+}
+
+stop() {
+    echo "Stopping OpenLDAP: "
+    kill -HUP `pgrep slapd` >> /dev/null
+    RETVAL=$?
+    return $RETVAL
+}    
+
+restart() {
+    stop
+    start
+}    
+
+case "$1" in
+  start)
+      start
+    ;;
+  stop)
+      stop
+    ;;
+  restart)
+      restart
+    ;;
+  *)
+    echo $"Usage: $0 {start|stop|restart}" 
+    exit 1
+esac
+
+exit $?

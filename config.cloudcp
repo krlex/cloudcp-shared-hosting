@@ -1,0 +1,17 @@
+LDAP_ORG="Make A Byte, inc"
+LDAP_DOMAIN="xfabric.org"
+LDAP_MANAGER="Manager"
+LDAP_MANAGER_PASSWORD="test"
+LDAP_CONF="/usr/local/etc/openldap/slapd.conf"
+
+HTTP_USER="nginx"
+
+MAIL_HOSTNAME="mail.xfabric.org"
+MAIL_BASE="/opt/xfabric/mail"
+
+DNS_CHROOT="/usr/local"
+
+MYSQL_ROOT_PASSWORD="test"
+
+JAVA_INSTALL="y"
+JAVA_VERSION="1.6"

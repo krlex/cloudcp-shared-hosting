@@ -1,0 +1,1 @@
+chkconfig --levels 2345 pop3d on

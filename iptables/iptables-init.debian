@@ -1,0 +1,34 @@
+#!/bin/sh
+
+### BEGIN INIT INFO
+# Provides:          iptables
+# Required-Start:    
+# Required-Stop:     
+# Default-Start:     2 3 4 5
+# Default-Stop:      0 1 6
+# Short-Description: Starts iptables
+# Description:       Starts the iptables firewall
+### END INIT INFO
+
+case "$1" in
+  start)
+    echo "Starting Firewall "
+    /etc/iptables.sh
+    /sbin/iptables --list
+    ;;
+  stop)
+    echo "Stopping Firewall.."
+    /sbin/iptables --flush
+    /sbin/iptables --list
+    ;;
+  restart)
+    echo "Restarting Firewall..."
+    /etc/iptables.sh
+    ;;
+  *)
+    echo "Usage: /etc/init.d/iptables {start|stop|restart}"
+    exit 1
+    ;;
+esac
+
+exit 0

@@ -1,0 +1,4 @@
+# Remove conflicting packages
+yum -y remove sendmail
+
+yum -y install pcre-devel.x86_64 cyrus-sasl-devel.x86_64

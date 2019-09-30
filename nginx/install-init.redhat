@@ -1,0 +1,1 @@
+chkconfig --level 2345 nginx on

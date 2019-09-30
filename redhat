@@ -1,0 +1,11 @@
+yum -y update
+yum -y upgrade
+yum -y install make gcc gcc-c++ kernel-devel
+
+# Add library paths
+echo "/usr/lib" > /etc/ld.so.conf.d/x86libs.conf
+echo "/usr/lib64" > /etc/ld.so.conf.d/x64libs.conf
+echo "/usr/local/lib" > /etc/ld.so.conf.d/locallibs.conf
+echo "/usr/local/include" > /etc/ld.so.conf.d/include.conf
+
+ldconfig

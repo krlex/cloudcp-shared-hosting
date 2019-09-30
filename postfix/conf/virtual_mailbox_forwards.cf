@@ -1,0 +1,7 @@
+server_host = 127.0.0.1
+search_base = 
+version = 3
+timeout = 10
+size_limit = 1
+query_filter = (&(&(mail=%s)(status=active))(objectClass=ccpMailbox))
+result_attribute = mailForwardingAddress

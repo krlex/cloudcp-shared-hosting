@@ -1,0 +1,30 @@
+#!/bin/sh
+#
+### BEGIN INIT INFO
+# Provides:          imapd
+# Required-Start:
+# Required-Stop:
+# Default-Start:     2 3 4 5
+# Default-Stop:      0 1 6
+# Short-Description: Start imapd at boot time
+# Description:       Courier imapd daemon
+### END INIT INFO
+
+case "$1" in
+  start)
+    echo "Starting Courier IMAP: "
+      /usr/lib/courier-imap/libexec/imapd.rc start
+      /usr/lib/courier-imap/libexec/imapd-ssl.rc start
+    ;;
+  stop)
+    echo "Stopping Courier IMAP: "
+    /usr/lib/courier-imap/libexec/imapd.rc stop
+    /usr/lib/courier-imap/libexec/imapd-ssl.rc stop
+    ;;
+  *)
+    echo "Usage: /etc/init.d/imapd {start|stop}"
+    exit 1
+    ;;
+esac
+
+exit 0

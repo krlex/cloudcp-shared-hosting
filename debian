@@ -1,0 +1,11 @@
+# Update system & install build tools
+apt-get update
+apt-get --assume-yes upgrade
+apt-get --assume-yes install build-essential
+
+# Add library paths
+echo "/usr/lib" > /etc/ld.so.conf.d/lib32.conf
+echo "/usr/lib64" > /etc/ld.so.conf.d/lib64.conf
+echo "/usr/local/include" > /etc/ld.so.conf.d/include.conf
+
+ldconfig

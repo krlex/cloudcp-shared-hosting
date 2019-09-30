@@ -1,0 +1,15 @@
+function get_ldap_password {
+
+	stty -echo
+	read -p "Password: " LDAP_MANAGER_PASSWORD; echo
+	stty -echo
+	read -p "Confirm: " PW2;
+	stty echo echo
+
+	if [ "$LDAP_MANAGER_PASSWORD" != "$PW2" ]; then
+	    echo "Password's don't match!"
+	    getPassword
+	fi
+
+	return 0
+}

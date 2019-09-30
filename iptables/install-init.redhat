@@ -1,0 +1,3 @@
+chmod +x ./iptables.redhat.sh
+./iptables.redhat.sh
+chkconfig --levels 2345 iptables on

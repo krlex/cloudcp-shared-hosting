@@ -1,0 +1,47 @@
+#!/bin/sh 
+# 
+### BEGIN INIT INFO
+# Provides:          postfix
+# Required-Start:    $syslog
+# Required-Stop:
+# Default-Start:     2 3 4 5
+# Default-Stop:      0 1 6
+# Short-Description: Start postfix MTA
+# Description:       Postfix SMTP server
+### END INIT INFO
+ 
+# See how we were called. 
+case "$1" in 
+   start) 
+      # Start daemons. 
+      echo -n "Starting postfix: " 
+      newaliases 
+      for I in access canonical relocated transport virtual 
+      do 
+      if [ -f /etc/postfix/$I ] ; then 
+         /usr/sbin/postmap hash:/etc/postfix/$I < /etc/postfix/$I 
+      fi 
+      done 
+      /usr/sbin/postfix start 2>/dev/null 
+      ;; 
+   stop) 
+      # Stop daemons. 
+      echo -n "Shutting down postfix: " 
+      /usr/sbin/postfix stop 2>/dev/null 
+      ;; 
+   restart) 
+      $0 stop 
+      $0 start 
+      ;; 
+   reload) 
+      /usr/sbin/postfix reload 
+      ;; 
+   status) 
+      status master 
+      ;; 
+   *) 
+      echo "Usage: $0 {start|stop|restart|reload|status}" 
+      exit 1 
+   esac 
+ 
+exit 0

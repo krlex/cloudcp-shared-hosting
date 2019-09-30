@@ -1,0 +1,47 @@
+dn: @basedn@
+dc: @dc@
+o: @org@
+objectclass: dcObject
+objectclass: organization
+objectclass: top
+
+dn: ou=Administration,@basedn@
+objectclass: top
+objectclass: organizationalUnit
+ou: Administration
+
+dn: ou=Groups,@basedn@
+objectclass: top
+objectclass: organizationalUnit
+ou: Groups
+
+dn: ou=Hosting,@basedn@
+objectclass: top
+objectclass: organizationalUnit
+ou: Hosting
+
+dn: ou=Roles,@basedn@
+objectclass: top
+objectclass: organizationalUnit
+ou: Roles
+
+dn: cn=admin,ou=Roles,@basedn@
+cn: admin
+objectclass: ccpRole
+objectclass: top
+
+dn: ou=System,@basedn@
+objectclass: top
+objectclass: organizationalUnit
+ou: System
+
+dn: cn=ccpAtomicUID,ou=System,@basedn@
+cn: ccpAtomicUID
+objectclass: top
+objectclass: ccpAtomicUID
+uidnumber: 10001
+
+dn: ou=Users,@basedn@
+objectclass: top
+objectclass: organizationalUnit
+ou: Users

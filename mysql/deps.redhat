@@ -1,0 +1,5 @@
+yum install -y bison.x86_64 gcc-c++.x86_64 libaio-devel.x86_64 ncurses-devel.x86_64
+
+# Download and install cmake
+wget http://dl.atrpms.net/all/cmake-2.6.4-7.el5.x86_64.rpm
+rpm -i cmake-2.6.4-7.el5.x86_64.rpm

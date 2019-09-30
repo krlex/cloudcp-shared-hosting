@@ -1,0 +1,8 @@
+# Remove existing Exim4 MTA
+/etc/init.d/exim4 stop
+update-rc.d exim4 remove
+apt-get remove --purge --assume-yes exim4
+
+# Install dependencies
+#apt-get --assume-yes install libsasl2-dev libdb4.8++-dev libpcre++-dev libssl-dev
+apt-get --assume-yes install libpcre++-dev

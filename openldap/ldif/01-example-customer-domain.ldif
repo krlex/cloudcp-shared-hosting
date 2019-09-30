@@ -1,0 +1,54 @@
+# Customer's Organizational Unit
+dn: ou=example.com,ou=Hosting,@basedn@
+objectclass: organizationalUnit
+ou: example.com
+
+
+# Minimal customer user account
+dn: cn=Test Customer,ou=example.com,ou=Hosting,@basedn@
+objectClass: ccpAccount
+uid: customer1
+cn: Test Customer
+givenName: Test
+sn: Customer
+created: 08-04-2011
+mail: customer1@gmail.com
+# password = test
+userPassword: {SSHA}0e6DHi4Gu4RzKp6W1nJA1RUfR/lS3h3J
+status: disabled
+
+
+# Customer mailbox account
+dn: mail=user1@example.com,ou=example.com,ou=Hosting,@basedn@
+mail: user1@example.com
+mailboxDomain: example.com
+mailAlternateAddress: abuse@example.com
+mailAlternateAddress: postmaster@example.com
+mailAlternateAddress: hostmaster@example.com
+mailAlternateAddress: webmaster@example.com
+maildir: /opt/cloudcp/mail/example.com/user1/Maildir
+mailMessageStore: /opt/cloudcp/mail/example.com/user1
+mailboxQuota: 10737418240S
+objectClass: ccpMailbox
+# password = test
+userPassword: {SSHA}0e6DHi4Gu4RzKp6W1nJA1RUfR/lS3h3J
+status: active
+
+
+# Customer mail relay account  (MUST NOT HAVE THE SAME DOMAIN CONFIGURED AS BOTH LOCAL MAILBOX AND REMOTE RELAY DOMAIN!)
+dn: mailRelayDomain=relay.example.com,ou=example.com,ou=Hosting,@basedn@
+objectClass: ccpMailRelay
+mailRelayDomain: relay.example.com
+mailTransport: smtp:[mail.relay.example.com]
+mail: @relay.example.com
+status: disabled
+
+
+# Customer ftp-only account
+dn: uid=ftpuser1,ou=example.com,ou=Hosting,@basedn@
+objectClass: ccpFtpUser
+# password = test
+userPassword: {SSHA}0e6DHi4Gu4RzKp6W1nJA1RUfR/lS3h3J
+uid: ftpuser1
+ftpRoot: /usr/local/nginx/html/example.com
+status: disabled

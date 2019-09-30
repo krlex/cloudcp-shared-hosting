@@ -1,0 +1,6 @@
+version = 3
+server_host = 127.0.0.1
+server_port = 389
+search_base = 
+result_attribute = mailTransport
+query_filter = mailRelayDomain=%s

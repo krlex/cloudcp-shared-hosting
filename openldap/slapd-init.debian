@@ -1,0 +1,34 @@
+#! /bin/sh
+#
+
+### BEGIN INIT INFO
+# Provides:          scriptname
+# Required-Start:
+# Required-Stop:
+# Default-Start:     2 3 4 5
+# Default-Stop:      0 1 6
+# Short-Description: Start daemon at boot time
+# Description:       Enable service provided by daemon.
+### END INIT INFO
+
+case "$1" in
+  start)
+    echo "Starting OpenLDAP: "
+      /usr/local/libexec/slapd -f /usr/local/etc/openldap/slapd.conf
+    ;;
+  start-debug)
+    echo "Starting OpenLDAP in debug mode:"
+    /usr/local/libexec/slapd -f /usr/local/etc/openldap/slapd.conf -d 65535
+    ;;
+  stop)
+    echo "Stopping OpenLDAP: "
+    killall slapd
+    ;;
+  *)
+    echo "Usage: /etc/init.d/slapd {start|stop}"
+    exit 1
+    ;;
+esac
+
+exit 0
+

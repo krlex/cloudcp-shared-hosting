@@ -1,0 +1,1 @@
+chkconfig --levels 2345 courier-authlib on

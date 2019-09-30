@@ -1,0 +1,1 @@
+./configure --with-http_ssl_module --with-http_stub_status_module

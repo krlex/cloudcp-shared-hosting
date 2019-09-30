@@ -1,0 +1,1 @@
+chkconfig --level 345 mysql on

@@ -1,0 +1,3 @@
+yum -y install libxml2-devel.x86_64 curl-devel.x86_64 libmcrypt-devel.x86_64 libjpeg-devel.x86_64 libpng-devel.x86_64 libX11-devel.x86_64 gd-devel.x86_64 zlib-devel.x86_64 libxslt-devel.x86_64 zlib-devel.x86_64
+
+# openldap.x86_64 openssl-devel.x86_64 mysql-devel.x86_64

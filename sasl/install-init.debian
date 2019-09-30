@@ -1,0 +1,3 @@
+apt-get --assume-yes install sasl2-bin libsasl2-dev
+cp saslauthd.debian /etc/default/saslauthd
+update-rc.d -f saslauthd defaults

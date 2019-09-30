@@ -1,0 +1,11 @@
+function prompt_install_java {
+
+     if [ -z "$JAVA_INSTALL" ]; then
+
+          read -p "Install Java? (y/n)" JAVA_INSTALL
+          if [ "$JAVA_INSTALL" != "y" ] && [ "$INSTALL_ANSWER" != "n" ]; then
+              echo "Invalid answer. Please answer y or n."
+              prompt_install_java
+          fi
+     fi
+}

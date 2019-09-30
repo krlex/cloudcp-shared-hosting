@@ -1,0 +1,6 @@
+# Disable selinux - doesnt like seeing saslauthd in postfix chroot
+echo "0" > /selinux/enforce
+
+# Already installed in base red hat images
+cp saslauthd.redhat /etc/sysconfig/saslauthd
+chkconfig --levels 2345 saslauthd on

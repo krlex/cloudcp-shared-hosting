@@ -1,0 +1,3 @@
+apt-get --assume-yes install libxml2-dev libcurl4-openssl-dev libmcrypt-dev libmysql++-dev libxslt1-dev libjpeg8-dev libpng12-dev libxpm-dev
+
+export LIBS='/usr/lib/liblber.so /usr/lib/libldap.so'

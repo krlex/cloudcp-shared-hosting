@@ -1,0 +1,61 @@
+#!/bin/sh
+
+# chkconfig: 2345 66 34
+# description: Start / Stop Courier IMAP Daemon
+# processname: authdaemond
+
+# Source function library.
+. /etc/rc.d/init.d/functions
+
+# Source networking configuration.
+. /etc/sysconfig/network
+
+# Check that networking is up.
+[ ${NETWORKING} = "no" ] && exit 0
+
+RETVAL=0
+
+start() {
+# Start daemons.
+echo -n "Starting Courier-IMAP: "
+/usr/lib/courier-imap/libexec/imapd.rc start 2>/dev/null 1>&2 && success || failure
+/usr/lib/courier-imap/libexec/imapd-ssl.rc start 2>/dev/null 1>&2 && success || failure
+RETVAL=$?
+[ $RETVAL -eq 0 ] && touch /var/lock/subsys/courier-imapd
+        echo
+return $RETVAL
+}
+
+stop() {
+        # Stop daemons.
+echo -n "Shutting down Courier-IMAP: "
+/usr/lib/courier-imap/libexec/imapd.rc stop 2>/dev/null 1>&2 && success || failure
+/usr/lib/courier-imap/libexec/imapd-ssl.rc stop 2>/dev/null 1>&2 && success || failure
+RETVAL=$?
+[ $RETVAL -eq 0 ] && rm -f /var/lock/subsys/courier-imapd
+echo
+return $RETVAL
+}
+
+restart() {
+stop
+start
+}
+
+# See how we were called.
+case "$1" in
+  start)
+start
+;;
+  stop)
+stop
+;;
+  restart)
+restart
+;;
+  *)
+echo "Usage: authdaemond {start|stop|restart}"
+exit 1
+esac
+
+exit $?
