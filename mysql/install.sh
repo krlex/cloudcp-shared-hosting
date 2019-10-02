@@ -3,11 +3,11 @@
 . ./functions
 
 # Set up MySQL user/group
-groupadd mysql
-[ $? = "0" ] || error "Error creating mysql group"
-
-useradd -g mysql mysql
-[ $? = "0" ] || error "Error creating mysql user"
+#groupadd mysql
+#[ $? = "0" ] || error "Error creating mysql group"
+#
+#useradd -g mysql mysql
+#[ $? = "0" ] || error "Error creating mysql user"
 
 # Download and install MySQL
 wget http://mysql.com/get/Downloads/MySQL-5.5/mysql-5.5.46.tar.gz/from/http://mysql.he.net/ -O mysql-5.5.46.tar.gz
