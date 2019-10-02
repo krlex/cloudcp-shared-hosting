@@ -36,7 +36,7 @@ if [ ! -d "$DNS_CHROOT/named/dev/null" ]; then
 fi
 
 if [ ! -d "$DNS_CHROOT/named/dev/random" ]; then
-   mknod $DNS_CHROOT/named/dev/random c 1 8 
+   mknod $DNS_CHROOT/named/dev/random c 1 8
 fi
 
 chmod 666 $DNS_CHROOT/named/dev/{null,random}
@@ -45,12 +45,12 @@ chmod 666 $DNS_CHROOT/named/dev/{null,random}
 cp /etc/localtime $DNS_CHROOT/named/etc/
 
 # Download and install
-wget ftp://ftp.isc.org/isc/bind/9.8.0-P4/bind-9.8.0-P4.tar.gz
+wget ftp://ftp.isc.org/isc/bind/9.9.9-P8/bind-9.9.9-P8.tar.gz
 [ $? = "0" ] || error "Error downloading BIND DNS source"
 
 
-tar xzvf bind-9.8.0-P4.tar.gz
-cd bind-9.8.0-P4
+tar xzvf bind-9.9.9-P8.tar.gz
+cd bind-9.9.9-P8
 ./configure --with-openssl=/usr/local/ssl
 [ $? = "0" ] || error "Error configuring BIND DNS source"
 

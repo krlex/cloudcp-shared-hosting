@@ -1,4 +1,4 @@
-PHPLDAPADMIN_VERSION="1.2.1.1"
+PHPLDAPADMIN_VERSION="4.9.1"
 
 wget http://sourceforge.net/projects/phpldapadmin/files/phpldapadmin-php5/$PHPLDAPADMIN_VERSION/phpldapadmin-$PHPLDAPADMIN_VERSION.tgz/download -O phpldapadmin-$PHPLDAPADMIN_VERSION.tgz
 [ $? = "0" ] || error "Error downloading phpldapadmin"

@@ -10,11 +10,11 @@ useradd -g mysql mysql
 [ $? = "0" ] || error "Error creating mysql user"
 
 # Download and install MySQL
-wget http://mysql.com/get/Downloads/MySQL-5.5/mysql-5.5.15.tar.gz/from/http://mysql.he.net/ -O mysql-5.5.15.tar.gz
+wget http://mysql.com/get/Downloads/MySQL-5.5/mysql-5.5.46.tar.gz/from/http://mysql.he.net/ -O mysql-5.5.46.tar.gz
 [ $? = "0" ] || error "Error downloading mysql user"
 
-tar zxvf mysql-5.5.15.tar.gz
-cd mysql-5.5.15
+tar zxvf mysql-5.5.45.tar.gz
+cd mysql-5.5.46
 
 cmake . -DWITH_ARCHIVE_STORAGE_ENGINE=1 -DWITH_FEDERATED_STORAGE_ENGINE=1 \
 -DWITH_BLACKHOLE_STORAGE_ENGINE=1 -DMYSQL_DATADIR=/usr/local/mysql/data \

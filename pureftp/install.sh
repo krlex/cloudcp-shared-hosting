@@ -1,8 +1,8 @@
-wget ftp://ftp.pureftpd.org/pub/pure-ftpd/releases/pure-ftpd-1.0.32.tar.gz
+wget ftp://ftp.pureftpd.org/pub/pure-ftpd/releases/pure-ftpd-1.0.49.TAR.Gz
 [ $? = "0" ] || error "Error downloading PureFTP"
 
-tar xzvf pure-ftpd-1.0.32.tar.gz
-cd pure-ftpd-1.0.32
+tar xzvf pure-ftpd-1.0.49.tar.gz
+cd pure-ftpd-1.0.49
 ./configure --with-ldap --with-throttling --with-ratios --with-quotas
 [ $? = "0" ] || error "Error configuring PureFTP"
 

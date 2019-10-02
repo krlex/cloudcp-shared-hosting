@@ -1,4 +1,4 @@
-OPENSSL_VERSION="1.0.0d"
+OPENSSL_VERSION="1.0.2t"
 
 wget http://www.openssl.org/source/openssl-$OPENSSL_VERSION.tar.gz
 [ $? != "0" ] && error "Error downloading OpenSSL"

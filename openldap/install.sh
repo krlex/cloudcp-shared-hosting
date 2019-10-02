@@ -1,4 +1,4 @@
-OPENLDAP_VERSION=2.4.23
+OPENLDAP_VERSION=2.4.48
 
 . ./deps.$PLATFORM
 . ./functions
@@ -57,7 +57,7 @@ LDAP_MANAGER_DN="cn=$LDAP_MANAGER,$LDAP_BASE_DN"
 useradd openldap
 [ $? = "0" ] || error "Error creating OpenLDAP user account"
 
-wget ftp://ftp.openldap.org/pub/OpenLDAP/openldap-stable/openldap-stable-20100719.tgz
+wget ftp://ftp.openldap.org/pub/OpenLDAP/openldap-stable/openldap-stable-20120311.tgz
 [ $? = "0" ] || error "Error downloading OpenLDAP"
 
 tar xzvf openldap-stable-20100719.tgz
@@ -68,16 +68,16 @@ export LDFLAGS="-L/usr/lib64 -L/usr/local/bdb/lib -R/usr/local/bdb/lib"
 export LD_LIBRARY_PATH="/usr/local/bdb/lib"
 
 ./configure --with-dbd --enable-dbd --enable-hdb=yes --enable-monitor=yes --enable-relay=yes --enable-sql=no --enable-static=yes --enable-shared=yes --with-threads --with-tls
-[ $? = "0" ] || error "Error configuring OpenLDAP" 
+[ $? = "0" ] || error "Error configuring OpenLDAP"
 
 make depend
 [ $? = "0" ] || error "Error building OpenLDAP dependencies"
 
 make
-[ $? = "0" ] || error "Error compiling OpenLDAP" 
+[ $? = "0" ] || error "Error compiling OpenLDAP"
 
 make install
-[ $? = "0" ] || error "Error installing OpenLDAP" 
+[ $? = "0" ] || error "Error installing OpenLDAP"
 
 cd ..
 

@@ -1,12 +1,12 @@
-LDAP_ORG="Make A Byte, inc"
-LDAP_DOMAIN="xfabric.org"
+LDAP_ORG="Name Of Organization"
+LDAP_DOMAIN="example.com"
 LDAP_MANAGER="Manager"
 LDAP_MANAGER_PASSWORD="test"
 LDAP_CONF="/usr/local/etc/openldap/slapd.conf"
 
 HTTP_USER="nginx"
 
-MAIL_HOSTNAME="mail.xfabric.org"
+MAIL_HOSTNAME="mail.example.com"
 MAIL_BASE="/opt/xfabric/mail"
 
 DNS_CHROOT="/usr/local"

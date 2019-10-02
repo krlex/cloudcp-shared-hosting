@@ -1,12 +1,12 @@
 . ./deps.$PLATFORM
 
 # Courier authlib
-wget https://sourceforge.net/projects/courier/files/authlib/0.63.0/courier-authlib-0.63.0.tar.bz2/download -O courier-authlib-0.63.0.tar.bz2
+wget https://sourceforge.net/projects/courier/files/authlib/0.69.1/courier-authlib-0.69.1.tar.bz2/download -O courier-authlib-0.69.1.tar.bz2
 [ $? = "0" ] || error "Error downloading Courier authlib"
 
-bzip2 -d courier-authlib-0.63.0.tar.bz2
-tar xvf courier-authlib-0.63.0.tar
-cd courier-authlib-0.63.0
+bzip2 -d courier-authlib-0.69.1.tar.bz2
+tar xvf courier-authlib-0.69.1.tar
+cd courier-authlib-0.69.1
 
 ./configure
 [ $? = "0" ] || error "Error configuring Courier authlib"
@@ -36,12 +36,12 @@ service courier-authlib start
 
 
 # maildrop
-wget https://sourceforge.net/projects/courier/files/maildrop/2.5.4/maildrop-2.5.4.tar.bz2/download -O maildrop-2.5.4.tar.bz2
+wget https://sourceforge.net/projects/courier/files/maildrop/3.0.0/maildrop-3.0.0.tar.bz2/download -O maildrop-3.0.0.tar.bz2
 [ $? = "0" ] || error "Error downloading Courier maildrop"
 
-bzip2 -d maildrop-2.5.4.tar.bz2
-tar xvf maildrop-2.5.4.tar
-cd maildrop-2.5.4
+bzip2 -d maildrop-3.0.0.tar.bz2
+tar xvf maildrop-3.0.0.tar
+cd maildrop-3.0.0
 
 ./configure
 [ $? = "0" ] || error "Error configuring Courier maildrop"
@@ -57,12 +57,12 @@ cd ..
 
 
 # imap, pop3
-wget https://sourceforge.net/projects/courier/files/imap/4.9.3/courier-imap-4.9.3.tar.bz2/download -O courier-imap-4.9.3.tar.bz2
+wget https://sourceforge.net/projects/courier/files/imap/5.0.8/courier-imap-5.0.8.tar.bz2/download -O courier-imap-5.0.8.tar.bz2
 [ $? = "0" ] || error "Error downloading Courier IMAP/POP3"
 
-bzip2 -d courier-imap-4.9.3.tar.bz2
-tar xvf courier-imap-4.9.3.tar
-cd courier-imap-4.9.3
+bzip2 -d courier-imap-5.0.8.tar.bz2
+tar xvf courier-imap-5.0.8.tar
+cd courier-imap-5.0.8
 
 ./configure --disable-root-check
 [ $? = "0" ] || error "Error configuring Courier IMAP/POP"

@@ -1,4 +1,4 @@
-PHP_VERSION=5.3.6
+PHP_VERSION=7.3
 
 . ./deps.$PLATFORM
 

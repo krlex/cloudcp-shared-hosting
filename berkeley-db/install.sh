@@ -1,5 +1,4 @@
-#DB_VERSION=5.2.28  -- Does not work with OpenLDAP 2.4.23
-DB_VERSION=4.8.30
+DB_VERSION=18.1.32
 
 wget http://download.oracle.com/berkeley-db/db-$DB_VERSION.tar.gz
 [ $? = "0" ] || error "Error downloading Berkeley DB"

@@ -52,7 +52,7 @@ chmod 770 install.sh
 cd berkeley-db
 chmod 770 install.sh
 . ./install.sh
-[ $? = "0" ] || error "Error building Berkeley DB"  
+[ $? = "0" ] || error "Error building Berkeley DB"
 
 
 # OpenLDAP
@@ -70,7 +70,7 @@ chmod 770 install.sh
 
 
 # PHP
-cd php53
+cd php73
 chmod 770 install.sh
 . ./install.sh
 [ $? = "0" ] || error "Error building PHP"
@@ -158,7 +158,7 @@ echo "* Installation Complete *"
 echo "*************************"
 echo
 echo "Build time: $BUILD_TIME minutes"
-echo 
+echo
 echo "Enjoy your new hosting platform!"
 echo
 echo

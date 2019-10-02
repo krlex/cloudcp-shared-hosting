@@ -1,22 +1,22 @@
 source deps.$PLATFORM
 
 # Download source
-wget ftp://ftp.reverse.net/pub/postfix/official/postfix-2.8.4.tar.gz
-[ $? = "0" ] || error "Error creating downloading Postfix source" 
+wget ftp://ftp.reverse.net/pub/postfix/official/postfix-3.3.6.tar.gz
+[ $? = "0" ] || error "Error creating downloading Postfix source"
 
 # Install Postfix w/ LDAP support
-tar xzvf postfix-2.8.4.tar.gz
-cd postfix-2.8.4
+tar xzvf postfix-3.3.6.tar.gz
+cd postfix-3.3.6
 
 # Create postfix users
 useradd postfix
-[ $? = "0" ] || error "Error creating Postfix user" 
+[ $? = "0" ] || error "Error creating Postfix user"
 
 useradd postdrop
 [ $? = "0" ] || error "Error creating postdrop user"
 
 useradd vmail
-[ $? = "0" ] || error "Error creating virtual mail user" 
+[ $? = "0" ] || error "Error creating virtual mail user"
 
 POSTFIX_VMAIL_UID=`id -u vmail`
 POSTFIX_VMAIL_GID=`id -g vmail`
@@ -47,10 +47,10 @@ DEBUG='-g'
 
 
 make
-[ $? = "0" ] || error "Error compiling Postix" 
+[ $? = "0" ] || error "Error compiling Postix"
 
 sh postfix-install -non-interactive
-[ $? = "0" ] || error "Error installing Postix" 
+[ $? = "0" ] || error "Error installing Postix"
 
 cd ../
 

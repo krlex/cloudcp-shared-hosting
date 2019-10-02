@@ -2,12 +2,12 @@ NGINX_WORKERS=`cat /proc/cpuinfo | grep processor | wc -l`
 
 . ./deps.$PLATFORM
 
-wget http://nginx.org/download/nginx-1.0.4.tar.gz
+wget http://nginx.org/download/nginx-1.9.9.tar.gz
 [ $? = "0" ] || error "Error downloading nginx source"
 
 
-tar xzvf nginx-1.0.4.tar.gz
-cd nginx-1.0.4/
+tar xzvf nginx-1.9.9.tar.gz
+cd nginx-1.9.9/
 . ../configure.$PLATFORM
 [ $? = "0" ] || error "Error configuring nginx source"
 
